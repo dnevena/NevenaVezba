@@ -71,4 +71,17 @@ public class UserService {
 		
 	}
 	
+	public boolean checkUser (String username, String password) {
+		
+		User user = userRepository.findOneByUsername(username);
+		boolean valid = false;
+		if (user!= null ) {
+			if(user.getPassword().equals(password)) {
+				valid = true;
+			}
+		}
+		
+		return valid;
+		
+	}	
 }

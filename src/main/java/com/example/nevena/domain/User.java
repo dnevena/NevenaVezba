@@ -22,6 +22,8 @@ public class User {
 	
 	private String email;
 	
+	private String role;
+	
 	@OneToMany(mappedBy="user")
 	private List<ToDo> lista = new ArrayList<>();
 	
@@ -77,6 +79,18 @@ public class User {
 
 	public void setLista(List<ToDo> lista) {
 		this.lista = lista;
+	}
+
+
+
+	public String getRole() {
+		return role;
+	}
+
+
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 	
